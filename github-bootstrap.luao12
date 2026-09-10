@@ -1,4 +1,4 @@
-local uiUrl = 'https://raw.githubusercontent.com/atrfsdfdsd-ux/arasdasd/refs/heads/main/new.luaa'
+local uiUrl = 'https://raw.githubusercontent.com/atrfsdfdsd-ux/arasdasd/refs/heads/main/new.lua1'
 local universalUrl = 'https://raw.githubusercontent.com/atrfsdfdsd-ux/arasdasd/refs/heads/main/universal.lua'
 assert(
 	not uiUrl:find('YOUR_USERNAME', 1, true)
