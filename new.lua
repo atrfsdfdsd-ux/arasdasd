@@ -1,8 +1,3 @@
--- Vape Modern UI 1.0.0 — local edited copy, intentionally without the cache deletion marker.
--- Original UI: 7GrandDadPGN/VapeCompiled/guis/new.lua
--- Upstream revision: d59c5d24275af96562f4db606dd320e90bcc26c4
--- Native module/option APIs, callbacks, bindings and profile serialization are retained.
--- Modern presentation is embedded near the end of this file; search for "installModern".
 
 local vape = {
 	ActiveBinds = {},
