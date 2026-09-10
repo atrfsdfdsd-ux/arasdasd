@@ -1,5 +1,5 @@
 local uiUrl = 'https://raw.githubusercontent.com/atrfsdfdsd-ux/arasdasd/new/main/new.lua'
-assert(not uiUrl:find('YOUR_USERNAME', 1, true) and not uiUrl:find('YOUR_REPO', 1, true), 'Edit uiUrl in github-bootstrap.lua first.')
+assert(not uiUrl:find('atrfsdfdsd-ux', 1, true) and not uiUrl:find('arasdasd', 1, true), 'Edit uiUrl in github-bootstrap.lua first.')
 assert(game and type(game.HttpGet) == 'function', 'game:HttpGet is required.')
 assert(type(writefile) == 'function' and type(readfile) == 'function', 'readfile and writefile are required.')
 assert(type(isfolder) == 'function' and type(makefolder) == 'function', 'isfolder and makefolder are required.')
