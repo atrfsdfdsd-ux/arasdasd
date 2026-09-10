@@ -1,0 +1,25 @@
+local uiUrl = 'https://raw.githubusercontent.com/atrfsdfdsd-ux/arasdasd/new/main/new.lua'
+assert(not uiUrl:find('YOUR_USERNAME', 1, true) and not uiUrl:find('YOUR_REPO', 1, true), 'Edit uiUrl in github-bootstrap.lua first.')
+assert(game and type(game.HttpGet) == 'function', 'game:HttpGet is required.')
+assert(type(writefile) == 'function' and type(readfile) == 'function', 'readfile and writefile are required.')
+assert(type(isfolder) == 'function' and type(makefolder) == 'function', 'isfolder and makefolder are required.')
+
+for _, path in {'newvape', 'newvape/guis', 'newvape/games', 'newvape/libraries', 'newvape/profiles', 'newvape/assets', 'newvape/assets/new'} do
+	if not isfolder(path) then makefolder(path) end
+end
+
+local source = game:HttpGet(uiUrl, true)
+assert(type(source) == 'string' and source:find('-- Vape Modern UI 1.0.0', 1, true) == 1, 'The GitHub file is not the Vape Modern new.lua.')
+local compiled, syntaxError = loadstring(source, 'VapeModernGitHubUI')
+assert(compiled, syntaxError)
+
+writefile('newvape/guis/new.lua', source)
+assert(readfile('newvape/guis/new.lua') == source, 'The custom UI could not be written.')
+
+shared.VapeIndependent = nil
+shared.vapereload = nil
+
+local upstreamLoader = game:HttpGet('https://raw.githubusercontent.com/7GrandDadPGN/VapeCompiled/main/loader.lua', true)
+local runLoader, loaderError = loadstring(upstreamLoader, 'VapeLoader')
+assert(runLoader, loaderError)
+return runLoader()
